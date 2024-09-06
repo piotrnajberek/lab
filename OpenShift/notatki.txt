@@ -1,0 +1,10 @@
+https://github.com/m-czernek/DO101x-apps.git
+
+OpenShift/version
+
+oc new-app --name version https://github.com/m-czernek/DO101x-apps#update-app --context-dir version
+
+oc new-app --name version2 https://github.com/piotrnajberek/lab#update-app --context-dir OpenShift/version
+
+
+oc new-app --name version https://github.com/yourgituser/DO101x-apps#update-app --context-dir version
