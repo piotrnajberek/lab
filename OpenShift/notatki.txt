@@ -8,3 +8,19 @@ oc new-app --name version2 https://github.com/piotrnajberek/lab#update-app --con
 
 
 oc new-app --name version https://github.com/yourgituser/DO101x-apps#update-app --context-dir version
+
+
+oc get all --selector app=version
+oc delete all --selector app=version
+
+
+http://api.openweathermap.org/data/2.5/weather?q=${city}&units= ${UNITS}&appid=${OWM_API_KEY};
+4bfebbaaafec20512e282f4481f90ed8
+https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=4bfebbaaafec20512e282f4481f90ed8
+
+oc delete all --selector app=contacts
+oc delete all,secret --selector template=postgresql-ephemeral-template
+oc delete secret contactsdb-secret contacts-generic-webhook-secret contacts-github-webhook-secret
+
+oc autoscale deployment/scale --min=1 --max=18 --cpu-percent=80
+oc get all
